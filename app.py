@@ -17,16 +17,14 @@ if not st.session_state["autenticado"]:
             st.rerun()
     st.stop()
 
-# CONEXÃO COM A IA (Lendo dos Secrets do Streamlit)
-  try:
+# CONEXÃO COM A IA
+try:
     API_KEY = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=API_KEY)
     model = genai.GenerativeModel('models/gemini-1.5-flash')
 except:
-    st.error("Erro: API Key não configurada nos Secrets do Streamlit.")
+    st.error("Erro: API Key não configurada nos Secrets.")
     st.stop()
-
-# INTERFACE
 st.sidebar.title("MENU LOGÍSTICO")
 opcao = st.sidebar.radio("Ir para:", ["Análise de Custos", "Copiloto IA"])
 
