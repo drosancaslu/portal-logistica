@@ -19,7 +19,7 @@ if not st.session_state["autenticado"]:
 
 # CONEXÃO COM A IA (SISTEMA DE TENTATIVAS)
 try:
-    API_KEY = st.secrets["GEMINI_API_KEY"]
+    API_KEY = st.secrets["CHAVE_NOVA"]
     genai.configure(api_key=API_KEY)
     
     # Lista de nomes possíveis para o modelo (o código tentará um por um)
