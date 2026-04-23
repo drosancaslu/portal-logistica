@@ -21,7 +21,7 @@ if not st.session_state["autenticado"]:
 try:
     API_KEY = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
+   model = genai.GenerativeModel('models/gemini-1.5-flash')
 except:
     st.error("Erro: API Key não configurada nos Secrets do Streamlit.")
     st.stop()
