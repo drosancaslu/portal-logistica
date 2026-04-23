@@ -18,8 +18,7 @@ if not st.session_state["autenticado"]:
     st.stop()
 
 # CONEXÃO COM A IA (Lendo dos Secrets do Streamlit)
-try:
-   try:
+  try:
     API_KEY = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=API_KEY)
     model = genai.GenerativeModel('models/gemini-1.5-flash')
